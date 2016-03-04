@@ -4,25 +4,16 @@
     <meta charset="utf-8">
     <title>Consumer app</title>
   </head>
-  <body ng-controller="MainController">
-    <p>
-      Getting all cats:
-      <div ng-repeat="cat in cat_collection">
-        <li>{{cat.name}}</li>
-        <li>{{cat.profile}}</li>
-        <li>{{cat.age}}</li>
-        <li>{{cat.active}}</li>
-        <hr>
-      </div>
-    </p>
+  <body>
+    <base href="/">
 
-    <p>
-          Getting one cat:
-          {{singleCat}}
-    </p>
+
+  <div ng-view></div>
 
   </body>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular-resource.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
   <script type="text/javascript" src="js/app.js"></script>
   <script type="text/javascript" src="js/controllers.js"></script>
   <script type="text/javascript" src="js/services.js"></script>

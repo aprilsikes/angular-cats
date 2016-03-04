@@ -1,5 +1,11 @@
 {
   "firebase": "anikulapojones",
+  "rewrites": [
+{
+  "source": "**/**/**",
+  "destination": "/index.html"
+}
+  ],
   "public": "app",
   "ignore": [
     "firebase.json",

@@ -15,9 +15,15 @@ router.get("/", function(req,res){
 });
 
 router.get("/:id", function(req,res){
-   Cat().where({id: req.params.id}).then(function(payload){
+   Cat().where({id: req.params.id}).first().then(function(payload){
      res.json(payload);
    });
+});
+
+router.post('/', function (req, res) {
+  Cat().insert(req.body).then(function () {
+    res.json({success: true});
+  });
 });
 
 

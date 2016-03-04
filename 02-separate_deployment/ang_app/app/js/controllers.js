@@ -9,9 +9,26 @@ app.controller("MainController", function($scope, $http, CatService){
     console.log("an error occurred");
   });
 
-  CatService.getCat(1).then(function(single){
+});
+
+app.controller("CatController", function($scope, $http, CatService, $routeParams){
+  // $scope.cats = "the cat gang...";
+  the_id = $routeParams.id;
+  CatService.getCat(the_id).then(function(single){
     console.log("we are getting ONE Cat:");
     $scope.singleCat = single.data;
   });
+
+});
+
+app.controller("CatNewController", function($scope, $http, CatService, $routeParams){
+  $scope.cat = {};
+  $scope.addCat = function () {
+    var newCat = $scope.cat;
+    console.log(newCat);
+    CatService.addCat(newCat).then(function (stuff) {
+      console.log('we have received stuff ', stuff);
+    });
+  }
 
 });
